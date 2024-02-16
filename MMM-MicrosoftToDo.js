@@ -21,12 +21,9 @@ Module.register("MMM-MicrosoftToDo", {
     useRelativeDate: false,
     plannedTasks: {
       enable: false,
-      includedLists: [".*"], // this is ignored as a default value as the whole
-      // 'plannedTasks' object is replaced when property 'enable' is set to true
+      includedLists: [".*"],
       duration: {
-        weeks: 2 // this is ignored as a default value as the whole
-        // 'plannedTasks' object is replaced when property 'enable' is set to
-        // true
+        weeks: 2
       }
     },
     colorDueDate: false,
@@ -34,7 +31,7 @@ Module.register("MMM-MicrosoftToDo", {
   },
 
   getStyles: function () {
-    return ["MMM-MicrosoftToDo.css", "font-awesome.css"];
+    return ["MMM-MicrosoftToDo.css"];
   },
 
   // Override dom generator.
@@ -107,8 +104,8 @@ Module.register("MMM-MicrosoftToDo", {
           // add icon to recurring items
           if (element.recurrence != null) {
             var recurringIcon = document.createElement("i");
-            recurringIcon.className = "fas fa-sync";
-            recurringIcon.style = "margin-right:5px;";
+            recurringIcon.className = "fas fa-redo";
+            recurringIcon.style = "margin-right:5px; font-weight: normal;";
             recurringIcon.innerText = " - ";
             listSpan.append(recurringIcon);
           }
